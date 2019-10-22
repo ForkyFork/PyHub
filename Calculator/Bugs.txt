@@ -1,1 +1,1 @@
-1. unble te impot 22/7
+1. Unable to input math equation in a single input.
