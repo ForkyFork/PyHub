@@ -1,4 +1,3 @@
-
 from random import randint
 
 print("A random number was generated from 0 to 20. Guess that number!")
