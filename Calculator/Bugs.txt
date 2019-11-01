@@ -1,1 +1,0 @@
-1. Unable to input math equation in a single input.
