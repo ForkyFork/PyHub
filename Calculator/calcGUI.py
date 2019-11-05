@@ -10,15 +10,15 @@ class Ui_MainWindow(object):
         self.button_0 = QtWidgets.QPushButton(self.centralwidget)
         self.button_0.setGeometry(QtCore.QRect(10, 230, 51, 41))
         self.button_0.setObjectName("button_0")
+        self.button_1 = QtWidgets.QPushButton(self.centralwidget)
+        self.button_1.setGeometry(QtCore.QRect(10, 180, 51, 41))
+        self.button_1.setObjectName("button_1")
         self.button_2 = QtWidgets.QPushButton(self.centralwidget)
         self.button_2.setGeometry(QtCore.QRect(70, 180, 51, 41))
         self.button_2.setObjectName("button_2")
         self.button_3 = QtWidgets.QPushButton(self.centralwidget)
         self.button_3.setGeometry(QtCore.QRect(130, 180, 51, 41))
         self.button_3.setObjectName("button_3")
-        self.button_1 = QtWidgets.QPushButton(self.centralwidget)
-        self.button_1.setGeometry(QtCore.QRect(10, 180, 51, 41))
-        self.button_1.setObjectName("button_1")
         self.button_4 = QtWidgets.QPushButton(self.centralwidget)
         self.button_4.setGeometry(QtCore.QRect(10, 130, 51, 41))
         self.button_4.setObjectName("button_4")
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.button_7.setGeometry(QtCore.QRect(10, 80, 51, 41))
         self.button_7.setObjectName("button_7")
         self.button_clear = QtWidgets.QPushButton(self.centralwidget)
-        self.button_clear.setGeometry(QtCore.QRect(130, 230, 51, 41))
+        self.button_clear. setGeometry(QtCore.QRect(130, 230, 51, 41))
         self.button_clear.setObjectName("button_clear")
         self.button_add = QtWidgets.QPushButton(self.centralwidget)
         self.button_add.setGeometry(QtCore.QRect(220, 170, 51, 41))
@@ -77,6 +77,7 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 342, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+
         '''
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -92,7 +93,7 @@ class Ui_MainWindow(object):
 
         self.button_0.setText(_translate("MainWindow", "0"))
         #? self.button_0.clicked.connect(self.)
-        self.button_0.key
+        # self.button_0.key
 
         self.button_2.setText(_translate("MainWindow", "2"))
 
