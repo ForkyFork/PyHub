@@ -90,44 +90,62 @@ class Ui_MainWindow(object):
 
         self.button_0.setText(_translate("MainWindow", "0"))
         self.button_0.clicked.connect(partial(self.buttonClick, self.button_0))
+        self.button_0.setShortcut(_translate("MainWindow", "0"))
         self.button_1.setText(_translate("MainWindow", "1"))
+        self.button_1.setShortcut(_translate("MainWindow", "1"))
         self.button_1.clicked.connect(partial(self.buttonClick, self.button_1))
         self.button_2.setText(_translate("MainWindow", "2"))
+        self.button_2.setShortcut(_translate("MainWindow", "2"))
         self.button_2.clicked.connect(partial(self.buttonClick, self.button_2))
         self.button_3.setText(_translate("MainWindow", "3"))
+        self.button_3.setShortcut(_translate("MainWindow", "3"))
         self.button_3.clicked.connect(partial(self.buttonClick, self.button_3))
         self.button_4.setText(_translate("MainWindow", "4"))
+        self.button_4.setShortcut(_translate("MainWindow", "4"))
         self.button_4.clicked.connect(partial(self.buttonClick, self.button_4))
         self.button_5.setText(_translate("MainWindow", "5"))
+        self.button_5.setShortcut(_translate("MainWindow", "5"))
         self.button_5.clicked.connect(partial(self.buttonClick, self.button_5))
         self.button_6.setText(_translate("MainWindow", "6"))
+        self.button_6.setShortcut(_translate("MainWindow", "6"))
         self.button_6.clicked.connect(partial(self.buttonClick, self.button_6))
         self.button_7.setText(_translate("MainWindow", "7"))
+        self.button_7.setShortcut(_translate("MainWindow", "7"))
         self.button_7.clicked.connect(partial(self.buttonClick, self.button_7))
         self.button_8.setText(_translate("MainWindow", "8"))
+        self.button_8.setShortcut(_translate("MainWindow", "8"))
         self.button_8.clicked.connect(partial(self.buttonClick, self.button_8))
         self.button_9.setText(_translate("MainWindow", "9"))
+        self.button_9.setShortcut(_translate("MainWindow", "9"))
         self.button_9.clicked.connect(partial(self.buttonClick, self.button_9))
         self.button_clear.setText(_translate("MainWindow", "AC"))
+        self.button_clear.setShortcut(_translate("MainWindow", "Backspace"))
         self.button_clear.clicked.connect(partial(self.buttonClick, self.button_clear))
         self.button_add.setText(_translate("MainWindow", "+"))
+        self.button_add.setShortcut(_translate("MainWindow", "+"))
         self.button_add.clicked.connect(partial(self.buttonClick, self.button_add))
         self.button_minus.setText(_translate("MainWindow", "-"))
+        self.button_minus.setShortcut(_translate("MainWindow", "-"))
         self.button_minus.clicked.connect(partial(self.buttonClick, self.button_minus))
         self.button_multiply.setText(_translate("MainWindow", "*"))
+        self.button_multiply.setShortcut(_translate("MainWindow", "*"))
         self.button_multiply.clicked.connect(partial(self.buttonClick, self.button_multiply))
         self.button_divide.setText(_translate("MainWindow", "/"))
+        self.button_divide.setShortcut(_translate("MainWindow", "/"))
         self.button_divide.clicked.connect(partial(self.buttonClick, self.button_divide))
         self.button_float.setText(_translate("MainWindow", "."))
+        self.button_float.setShortcut(_translate("MainWindow", "."))
         self.button_float.clicked.connect(partial(self.buttonClick, self.button_float))
         self.button_ans.setText(_translate("MainWindow", "Ans"))
         self.button_ans.clicked.connect(partial(self.buttonClick, self.button_ans))
         self.button_equal.setText(_translate("MainWindow", "="))
+        self.button_equal.setShortcut(_translate("MainWindow", "Enter"))
         self.button_equal.clicked.connect(partial(self.buttonClick, self.button_equal))
         self.label.setText(_translate("MainWindow", "0"))
 
     def buttonClick(self, button):
         currentInput = self.label.text()
+
         if button == self.button_0:
             if currentInput == str(0):
                 pass
@@ -181,32 +199,27 @@ class Ui_MainWindow(object):
 
         elif button == self.button_clear:
             self.label.setText("0")
+
         elif button == self.button_add:
-            if currentInput == str(0):
-                pass
-            else:
+            if not (currentInput == '0' or currentInput[-1] in ('+', '-', '/', '*')):
                 self.label.setText(f"{currentInput}{'+'}")
+
         elif button == self.button_minus:
-            if currentInput == str(0):
-                pass
-            else:
+            if not (currentInput == str(0) or currentInput[-1] in ('+', '-', '/', '*')):
                 self.label.setText(f"{currentInput}{'-'}")
+
         elif button == self.button_multiply:
-            if currentInput == str(0):
-                pass
-            else:
+            if not (currentInput == str(0) or currentInput[-1] in ('+', '-', '/', '*')):
+
                 self.label.setText(f"{currentInput}{'*'}")
+
         elif button == self.button_divide:
-            if currentInput == str(0):
-                pass
-            else:
+            if not (currentInput == str(0) or currentInput[-1] in ('+', '-', '/', '*')):
                 self.label.setText(f"{currentInput}{'/'}")
 
         elif button == self.button_float:
-            signs = ['+', '-', '/', '*']
-            if currentInput == str(0):
-                pass
-            else:
+            signs = ('+', '-', '/', '*')
+            if not currentInput == str(0):
                 for sign in signs:
                     if currentInput.find(sign) != -1:
                         nums = currentInput.split(sign)
@@ -218,9 +231,7 @@ class Ui_MainWindow(object):
                         self.label.setText(f"{currentInput}{'.'}")
 
         elif button == self.button_equal:
-            if currentInput == str(0):
-                pass
-            else:
+            if not (currentInput == str(0) or currentInput[-1] in ('+', '-', '/', '*') or currentInput.isdigit()):
                 if currentInput.find('+') != -1:
                     expression = currentInput.split("+")
                     answer = float(expression[0]) + float(expression[1])
@@ -236,11 +247,11 @@ class Ui_MainWindow(object):
                         answer = float(expression[0]) / float(expression[1])
                     except ZeroDivisionError:
                         return self.label.setText("ERROR: Zero Division")
+
                 if float(answer) == int(answer):
                     self.label.setText(str(int(answer)))
                 else:
                     self.label.setText(str(answer))
-
 
 if __name__ == "__main__":
     import sys
