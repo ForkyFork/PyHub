@@ -5,6 +5,12 @@ v1.1: Fixed program crashing upon typing letters.
 v1.2: - You can type in the mathematical sign instead of 'add', 'sub', etc.
       - The calculations are concatenated with the answer before it.
 
+v2.0: - Moved from terminal based to GUI.
+      - Bug fixes
+
+v2.1: - Fixed able to use multiple signs consecutively.
+      - Fixed crashing upon pressing equal when no sign is in the expression.
+
 
 #TODO: Add ability to enter calculations in a single entry.
 #TODO: Change functions to lambda if possible.
